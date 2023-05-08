@@ -1,6 +1,6 @@
 void main(List<String> args) {
   final mySquare = Square(side: 10);
-  mySquare.side = -20;
+  mySquare.side = 20;
   print(mySquare.calculateArea());
   print(mySquare.area);
 }
@@ -8,7 +8,9 @@ void main(List<String> args) {
 class Square {
   double _side;
 
-  Square({required double side}) : _side = side;
+  Square({required double side}) 
+  : assert( side >= 0, 'Side must be >= 0' ),
+    _side = side;
 
   double get area => _side * _side;
   double get side => _side;
