@@ -27,9 +27,9 @@ class Hero {
   Hero({required this.name, this.power = 'don\'t have', this.isAlive = true});
 
   Hero.fromJson(Map<String, dynamic> json)
-      : name = json['name'] ?? 'Not name',
-        power = json['power'] ?? 'Not power',
-        isAlive = json['isAlive'] ?? false;
+      : name = (json['name'] ?? 'Not name' ) as String ,
+        power = (json['power'] ?? 'Not power') as String, 
+        isAlive = (json['isAlive'] ?? false) as bool;
 
   @override
   String toString() {
